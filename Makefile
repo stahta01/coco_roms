@@ -6,24 +6,24 @@
 #               from: http://www.hermannseib.com/english/opensource.htm
 # =============================================================================
 
-A09=./a09 -oNOW -oTXT -oEXP -oNCL
+#A09=./a09 -oNOW -oTXT -oEXP -oNCL
 
-  AUTO_COCO_BUILD= ${A09} -Bauto_tmp -Y$@       cocodefs.asm
-   AUTO_BAS_BUILD= ${A09} -Bauto_tmp -Y$@       auto_symbols_coco.asm   bas.asm      -DVERBAS=20
-AUTO_EXTBAS_BUILD= ${A09} -Bauto_tmp -Y$@       auto_symbols_bas.asm    extbas.asm   -DVEREXTBAS=20
+#  AUTO_COCO_BUILD= ${A09} -Bauto_tmp -Y$@       cocodefs.asm
+#   AUTO_BAS_BUILD= ${A09} -Bauto_tmp -Y$@       auto_symbols_coco.asm   bas.asm      -DVERBAS=20
+#AUTO_EXTBAS_BUILD= ${A09} -Bauto_tmp -Y$@       auto_symbols_bas.asm    extbas.asm   -DVEREXTBAS=20
 
-      BAS10_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_coco.asm   bas.asm      -DVERBAS=10
-      BAS11_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_coco.asm   bas.asm      -DVERBAS=11
-      BAS12_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_coco.asm   bas.asm      -DVERBAS=12
-      BAS13_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_coco.asm   bas.asm      -DVERBAS=13
-      BAS20_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_coco.asm   bas.asm      -DVERBAS=20
-   EXTBAS10_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_bas.asm    extbas.asm   -DVEREXTBAS=10
-   EXTBAS11_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_bas.asm    extbas.asm   -DVEREXTBAS=11
-   EXTBAS20_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_bas.asm    extbas.asm   -DVEREXTBAS=20
-     DISK10_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_extbas.asm disk.asm     -DVERDISK=10
-     DISK11_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_extbas.asm disk.asm     -DVERDISK=11
-   SUPBAS20_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_extbas.asm supbas.asm   -DCOCOPAL=0
-  SUPBAS20P_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_extbas.asm supbas.asm   -DCOCOPAL=1
+#      BAS10_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_coco.asm   bas.asm      -DVERBAS=10
+#      BAS11_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_coco.asm   bas.asm      -DVERBAS=11
+#      BAS12_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_coco.asm   bas.asm      -DVERBAS=12
+#      BAS13_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_coco.asm   bas.asm      -DVERBAS=13
+#      BAS20_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_coco.asm   bas.asm      -DVERBAS=20
+#   EXTBAS10_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_bas.asm    extbas.asm   -DVEREXTBAS=10
+#   EXTBAS11_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_bas.asm    extbas.asm   -DVEREXTBAS=11
+#   EXTBAS20_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_bas.asm    extbas.asm   -DVEREXTBAS=20
+#     DISK10_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_extbas.asm disk.asm     -DVERDISK=10
+#     DISK11_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_extbas.asm disk.asm     -DVERDISK=11
+#   SUPBAS20_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_extbas.asm supbas.asm   -DCOCOPAL=0
+#  SUPBAS20P_BUILD= ${A09} -B$@ -L${@:.rom=.lst} auto_symbols_extbas.asm supbas.asm   -DCOCOPAL=1
 
 # =============================================================================
 # vasm assembler [oldstyle]
@@ -103,24 +103,24 @@ AUTO_EXTBAS_BUILD= ${A09} -Bauto_tmp -Y$@       auto_symbols_bas.asm    extbas.a
 # (available from http://sourceforge.net/projects/toolshed)
 # =============================================================================
 
-#MAMOU=mamou -q -mr
+MAMOU=mamou -q -mr
 
-#  AUTO_COCO_BUILD= ${MAMOU} cocodefs.asm                                        -sa > tmp && mv tmp $@
-#   AUTO_BAS_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=20    -sa > tmp && mv tmp $@
-#AUTO_EXTBAS_BUILD= ${MAMOU} auto_symbols_bas.asm    extbas.asm   -aVEREXTBAS=20 -sa > tmp && mv tmp $@
+  AUTO_COCO_BUILD= ${MAMOU} cocodefs.asm                                        -sa > tmp && mv tmp $@
+   AUTO_BAS_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=20    -sa > tmp && mv tmp $@
+AUTO_EXTBAS_BUILD= ${MAMOU} auto_symbols_bas.asm    extbas.asm   -aVEREXTBAS=20 -sa > tmp && mv tmp $@
 
-#      BAS10_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=10    -o$@ -l >${@:.rom=.lst}
-#      BAS11_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=11    -o$@ -l >${@:.rom=.lst}
-#      BAS12_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=12    -o$@ -l >${@:.rom=.lst}
-#      BAS13_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=13    -o$@ -l >${@:.rom=.lst}
-#      BAS20_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=20    -o$@ -l >${@:.rom=.lst}
-#   EXTBAS10_BUILD= ${MAMOU} auto_symbols_bas.asm    extbas.asm   -aVEREXTBAS=10 -o$@ -l >${@:.rom=.lst}
-#   EXTBAS11_BUILD= ${MAMOU} auto_symbols_bas.asm    extbas.asm   -aVEREXTBAS=11 -o$@ -l >${@:.rom=.lst}
-#   EXTBAS20_BUILD= ${MAMOU} auto_symbols_bas.asm    extbas.asm   -aVEREXTBAS=20 -o$@ -l >${@:.rom=.lst}
-#     DISK10_BUILD= ${MAMOU} auto_symbols_extbas.asm disk.asm     -aVERDISK=10   -o$@ -l >${@:.rom=.lst}
-#     DISK11_BUILD= ${MAMOU} auto_symbols_extbas.asm disk.asm     -aVERDISK=11   -o$@ -l >${@:.rom=.lst}
-#   SUPBAS20_BUILD= ${MAMOU} auto_symbols_extbas.asm supbas.asm   -aCOCOPAL=0    -o$@ -l >${@:.rom=.lst}
-#  SUPBAS20P_BUILD= ${MAMOU} auto_symbols_extbas.asm supbas.asm   -aCOCOPAL=1    -o$@ -l >${@:.rom=.lst}
+      BAS10_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=10    -o$@ -l >${@:.rom=.lst}
+      BAS11_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=11    -o$@ -l >${@:.rom=.lst}
+      BAS12_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=12    -o$@ -l >${@:.rom=.lst}
+      BAS13_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=13    -o$@ -l >${@:.rom=.lst}
+      BAS20_BUILD= ${MAMOU} auto_symbols_coco.asm   bas.asm      -aVERBAS=20    -o$@ -l >${@:.rom=.lst}
+   EXTBAS10_BUILD= ${MAMOU} auto_symbols_bas.asm    extbas.asm   -aVEREXTBAS=10 -o$@ -l >${@:.rom=.lst}
+   EXTBAS11_BUILD= ${MAMOU} auto_symbols_bas.asm    extbas.asm   -aVEREXTBAS=11 -o$@ -l >${@:.rom=.lst}
+   EXTBAS20_BUILD= ${MAMOU} auto_symbols_bas.asm    extbas.asm   -aVEREXTBAS=20 -o$@ -l >${@:.rom=.lst}
+     DISK10_BUILD= ${MAMOU} auto_symbols_extbas.asm disk.asm     -aVERDISK=10   -o$@ -l >${@:.rom=.lst}
+     DISK11_BUILD= ${MAMOU} auto_symbols_extbas.asm disk.asm     -aVERDISK=11   -o$@ -l >${@:.rom=.lst}
+   SUPBAS20_BUILD= ${MAMOU} auto_symbols_extbas.asm supbas.asm   -aCOCOPAL=0    -o$@ -l >${@:.rom=.lst}
+  SUPBAS20P_BUILD= ${MAMOU} auto_symbols_extbas.asm supbas.asm   -aCOCOPAL=1    -o$@ -l >${@:.rom=.lst}
 # =============================================================================
 
 all: verify

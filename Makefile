@@ -131,7 +131,7 @@ clean:
 a09: a09.c
 	gcc -o a09 a09.c
 
-cocodefs.asm: a09
+cocodefs.asm: # a09
 	
 auto_symbols_coco.asm: cocodefs.asm
 	${AUTO_COCO_BUILD}
